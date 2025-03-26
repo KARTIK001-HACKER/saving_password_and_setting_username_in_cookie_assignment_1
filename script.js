@@ -20,4 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // 4. Display the count on the webpage
 
   // your code here
+  let visitCount = parseInt(getCookie('count')) || 0;
+
+   // Increment the count
+   visitCount++;
+ 
+   // Update the cookie with the new count
+   setCookie('count', visitCount, 7); // Cookie expires in 7 days
+ 
+   // Display the count on the webpage
+   let counterElement = document.createElement('p');
+   counterElement.textContent = `You have visited this page ${visitCount} times.`;
+   document.body.appendChild(counterElement);
 });
